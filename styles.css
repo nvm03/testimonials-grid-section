@@ -40,7 +40,7 @@ h5, h6, h2, h2{
 }
 .wrapper{
     display: grid;
-    grid-auto-rows: 28px auto auto;
+    grid-template-rows: 28px minmax(4.5rem, auto) auto;
     gap: 16px;
     padding: 32px;
     border-radius: 1rem;

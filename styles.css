@@ -35,49 +35,49 @@ h5, h6, h2, h2{
 }
 .article{
     display: grid;
-    min-width: 19.063rem;
     justify-self: center;
 }
 .wrapper{
     display: grid;
-    grid-template-rows: 28px minmax(4.5rem, auto) auto;
-    gap: 16px;
+    grid-template-rows: 28px auto auto;
+    align-content: start; 
+    row-gap: 16px;
     padding: 32px;
     border-radius: 1rem;
-}
-.wrapper img{
-    border-radius: 50%;
-    max-width: 1.75rem;
-    max-height: 1.75rem;
-    grid-row: 1;
-    grid-column: 1;
 }
 .border-purple{
     border: 2px solid var(--purple300);
 }
-h5, h6{
-    grid-row: 1;
-    grid-column: 1;
-    align-self: center;
-    justify-self: start;
-    margin-left: 2.8rem;
+h2{
+    margin: 0;
+}
+h4{
+    margin: 0;
+}
+.author-info{
+   display: flex;
+   
+}
+.author-img{
+    border-radius: 50%;
+    max-width: 1.75rem;
+    max-height: 1.75rem;
+}
+.meta{
+    margin-left: 1rem;
 }
 h5{
-    align-self: flex-start;
     font-size: 13px;
     line-height: 1.1;
-    
 }
 h6{
-    align-self: flex-end;
     font-size: 11px;
     line-height: 1.1;
 }
 .daniel{
     background-color: var(--purple500);
 }
-h2{
-    
+h2{   
     font-weight: 600;
     font-size: 20px;
     line-height: 1.2;
@@ -131,12 +131,10 @@ h4{
 }
 
 
-@media (min-width: 48em) and (max-width: 90em){
+@media (min-width: 48em) and (max-width: 69.625em){
     .container{
         grid-template-columns: repeat(2, 1fr);
-        max-width: 40.438rem;
     }
-   
     .article:has(.daniel){
         grid-column: 1 / -1;   
     }
@@ -152,29 +150,53 @@ h4{
     .article:has(.kira){
         grid-column: 1/ -1;
     }
+    /* .wrapper .quotation-img{
+        display: block;
+        position: absolute;
+                          
+        left: 100px;
+        width: 102px;                 
+        height: auto;
+        pointer-events: none;
+    } */
+    .daniel{
+        background-image: url("images/bg-pattern-quotation.svg");
+        background-repeat: no-repeat;
+        background-position: 375px 0;   /* куда поставить */
+        background-size: 104px auto;
+    }
 }
 
-@media (min-width: 90em){
+@media (min-width: 69.625em){
+    body{
+        margin: 0 32px;
+    }
     .container{
-        grid-template-columns: repeat(6, 1fr);
-        max-width: 69.625rem;
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 69.625em;
     }
     .article:has(.daniel){
-        grid-column: 1 / span 4;   
+        grid-column: 1 / span 2;   
     }
     .article:has(.jonathan){
-        max-width: 255px;
-        grid-column: 5;
+        
+        grid-column: 3;
     }
     .article:has(.jeanette){
-        max-width: 255px;
+        
         grid-column: 1;
     }
     .article:has(.patrick){
-        grid-column: 2/ span 4;
+        grid-column: 2/ span 2;
     }
     .article:has(.kira){
-        grid-column: 6;
+        grid-column: 4;
         grid-row: 1/ span 2;
-    }  
+    }
+    .daniel{
+        background-image: url("images/bg-pattern-quotation.svg");
+        background-repeat: no-repeat;
+        background-position: 375px 0;   /* куда поставить */
+        background-size: 104px auto;
+    }
 }
